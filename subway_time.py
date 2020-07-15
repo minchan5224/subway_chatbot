@@ -7,10 +7,10 @@ from datetime import datetime
 import requests
 import time
 
-
+# 4초 내로 보내면 정상적으로 결과 받을수 있는데 4초지나면 안감;; 진짜 서비스할땐 서버에 시간표 db저장해서 4초내로 보내게해야함
 k_time = "%H%M%S"
 k_day = "%a"
-KST = datetime.now(timezone('Asia/Seoul'))#어느 국가에 위치한 서버든지 상관없이 한국 표준시로 사용하도록.
+KST = datetime.now(timezone('Asia/Seoul'))#어느 국가에 위치한 서버든지 상관없이 한국 표준시로 사용하도록. aws에서 쓸때 필요할까봐 만들었는데 groom에선 필요없었음..
 
 u_key_decode = '비공개' #디코딩 해둔 키값
 
