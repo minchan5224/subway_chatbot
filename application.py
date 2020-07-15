@@ -84,8 +84,8 @@ def keyboard():
 def Message():
     
     content = request.get_json()
-    content = content['userRequest']
-    content = content['utterance']
+    content = content['userRequest'] #필요한 부분 잘라냄
+    content = content['utterance'] #역이름 얻음
     u_sub_name, u_sub_line = user_data_processing(content)
     #print(u_sub_name+'lll', len(u_sub_name),type(u_sub_name))
     if u_sub_name == '명령어':
