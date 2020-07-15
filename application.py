@@ -9,8 +9,8 @@ def user_data_processing(u_data):
     sub_name = ''
     sub_line = ''
     sub_line_tmp = ''
-    bar_falg = 0
-    for i in range(len(u_data)):
+    bar_falg = 0 # '/' 가 없으면 역이름 검색 있으면 시간표 검색
+    for i in range(len(u_data)): # 정자역/분당선의 경우 정자역과 분당선을 분리하기위해
         if u_data[i] == '/':
             bar_falg = 1
         elif bar_falg == 0:
@@ -74,7 +74,7 @@ def timetable_msg(s_name, s_line):
 
 
 @app.route('/keyboard')
-def keyboard():
+def keyboard(): #필요없음
     return jsonify({
         'type' : 'buttons',
         'buttons' : '수도권'
